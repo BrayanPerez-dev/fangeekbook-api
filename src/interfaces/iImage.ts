@@ -1,3 +1,3 @@
 export interface iImage {
-    urlImage: string
+    url_image?: string
 }

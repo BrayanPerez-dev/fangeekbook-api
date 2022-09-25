@@ -8,7 +8,8 @@ module.exports = (sequelize: Sequelize, DataTypes: any) => {
     status!: boolean
 
     static associate = (models: any) => {
-      // define association here
+    FilmLanguage.hasMany(models.Film, {foreignKey: {name:'original_language', allowNull: false}})
+    FilmLanguage.hasMany(models.FilmDubbing, {foreignKey: {name:'language_id', allowNull: false}})
     }
   }
   FilmLanguage.init({

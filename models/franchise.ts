@@ -10,10 +10,10 @@ module.exports = (sequelize: Sequelize, DataTypes: any) => {
     id!: number;
     description!: string;
     status!: boolean;
-    urlImage!: string;
+    url_image!: string;
 
     static associate = (models: any) => {
-      // define association here
+      Franchise.belongsToMany(models.Film, {through: models.Saga})
     }
   }
   Franchise.init({
@@ -26,7 +26,7 @@ module.exports = (sequelize: Sequelize, DataTypes: any) => {
       type: DataTypes.STRING(20),
       allowNull: false
     },
-    urlImage: {
+    url_image: {
       type: DataTypes.STRING(120),
       allowNull: true,
       field: 'url_image'

@@ -8,7 +8,7 @@ module.exports = (sequelize: Sequelize, DataTypes: any) => {
     status!: boolean
 
     static associate = (models: any) => {
-      // define association here
+      StaffType.hasMany(models.Staff, {foreignKey: {name:'staff_type', allowNull: false}});
     }
   }
   StaffType.init({

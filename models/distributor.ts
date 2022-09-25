@@ -13,7 +13,7 @@ module.exports = (sequelize: Sequelize, DataTypes: any) => {
     urlImage!: string;
 
     static associate = (models: any) => {
-      // define association here
+    Distributor.hasMany(models.Film, {foreignKey: {name: 'distributor_id', allowNull: false}});
     }
   }
   Distributor.init({
@@ -26,7 +26,7 @@ module.exports = (sequelize: Sequelize, DataTypes: any) => {
       type: DataTypes.STRING(20),
       allowNull: false
     },
-    urlImage: {
+    url_image: {
       type: DataTypes.STRING(120),
       allowNull: true,
       field: 'url_image'

@@ -8,7 +8,8 @@ module.exports = (sequelize: Sequelize, DataTypes: any) => {
     status!: boolean
 
     static associate = (models: any) => {
-      // define association here
+      AwardCategory.belongsToMany(models.Celebrity, {through: models.CelebrityAward})
+      AwardCategory.belongsToMany(models.Film, {through: models.FilmAward})
     }
   }
   AwardCategory.init({

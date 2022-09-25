@@ -33,7 +33,7 @@ module.exports = (sequelize: Sequelize, DataTypes: any) => {
     status!: boolean;
 
     static associate = (models: any) => {
-      // define association here
+      FilmSong.belongsToMany(models.Film, {through: models.FilmSoundtrack})
     }
   }
   FilmSong.init({

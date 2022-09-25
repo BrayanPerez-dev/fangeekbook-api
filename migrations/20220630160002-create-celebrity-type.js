@@ -9,7 +9,10 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       id: {
-        type: Sequelize.NUMBER
+        type: Sequelize.INTEGER
+      },
+      celebrityId: {
+        type: Sequelize.INTEGER
       },
       description: {
         type: Sequelize.STRING
